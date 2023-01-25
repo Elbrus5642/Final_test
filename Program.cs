@@ -9,7 +9,7 @@ string[] arrayTextStr = { "hello", "2", "world", ":-)" };
 string[] GetArrayThreeSymbolElement(string[] array)
 {
     string[] arrayResult = new string[array.Length];
-       for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
 
         if (array[i].Length <= 3)
@@ -30,20 +30,24 @@ string[] GetArrayThreeSymbolElement(string[] array)
 
 void PrintArrayStr(string[] array)
 {
-    //Console.Write("[");
-    //for (int i = 0; i < array.Length; i++)
-    //{
-          Console.WriteLine(String.Join(", ", array));
-          //Console.Write($"{array[i]}, ");
-    //}
-    //Console.Write("]");
-    Console.WriteLine();
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"\"{array[i]}\"");
+        if (i < array.Length - 1)
+        {
+            Console.Write(", ");
+        }
+    }
 }
 
+Console.Write("[");
 PrintArrayStr(arrayTextStr);
+Console.Write("]");
 string[] arrayNorm = GetArrayThreeSymbolElement(arrayTextStr);
+Console.Write(" -> ");
+Console.Write("[");
 PrintArrayStr(arrayNorm);
-
+Console.Write("]");
 /* Функции в программировании
 void SelectionSort(int[] array)
 {  
